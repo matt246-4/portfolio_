@@ -1,0 +1,70 @@
+<!-- Fichier : index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGATION : Les liens pointent vers les ID des sections plus bas -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section 1 : Accueil (définie directement ici) -->
+        <section id="accueil" class="hero">
+            <h1>Bonjour, je suis [Ton Prénom]</h1>
+            <p>Développeur passionné. Défilez vers le bas pour découvrir mon travail !</p>
+            <a href="#projets" class="btn">Voir mes projets</a>
+        </section>
+
+        <!-- Section 2 : Emplacement où sera chargé le fichier apropos.html -->
+        <section id="apropos">
+            <!-- Le contenu de apropos.html s'affichera ici -->
+        </section>
+
+        <!-- Section 3 : Emplacement où sera chargé le fichier projets.html -->
+        <section id="projets">
+            <!-- Le contenu de projets.html s'affichera ici -->
+        </section>
+
+        <!-- Section 4 : Emplacement où sera chargé le fichier contact.html -->
+        <section id="contact">
+            <!-- Le contenu de contact.html s'affichera ici -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Mon Portfolio</p>
+    </footer>
+
+    <!-- SCRIPT JAVASCRIPT : Charge les pages externes dans la page principale -->
+    <script>
+        // Fonction pour charger un fichier HTML externe dans un conteneur
+        function chargerSection(idConteneur, fichier) {
+            fetch(fichier)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(idConteneur).innerHTML = data;
+                })
+                .catch(error => console.error("Erreur de chargement de " + fichier, error));
+        }
+
+        // On charge chaque fichier séparé dans sa section respective
+        chargerSection('apropos', 'apropos.html');
+        chargerSection('projets', 'projets.html');
+        chargerSection('contact', 'contact.html');
+    </script>
+</body>
+</html>
