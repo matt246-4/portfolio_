@@ -55,8 +55,8 @@ header {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%;
-    max-width: 1200px;
+    width: 95%; /* Augmente légèrement le width */
+    max-width: 1400px; /* Passage de 1200px à 1400px */
     z-index: 1000;
 }
 
@@ -83,19 +83,18 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 12px; /* Réduis de 20px à 12px ou 15px */
     list-style: none;
 }
 
 .nav-links a {
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.8rem; /* Passe à 0.8rem si besoin */
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    padding: 5px 10px;
+    letter-spacing: 0.5px;
+    padding: 5px 8px;
 }
 
 .nav-links a:hover, .nav-links a.active {
