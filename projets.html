@@ -1,38 +1,159 @@
-<!-- Fichier : projets.html -->
-<!-- SECTION 3 : Projets / Réalisations -->
-<h2>Mes Projets</h2>
-<p>Voici quelques-unes de mes réalisations récentes :</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets & Stages - Matthéo KESSIE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<div class="grid">
-    <!-- Carte Projet 1 -->
-    <article class="card">
-        <h3>Projet 1 : Site E-commerce</h3>
-        <p>Développement d'une boutique en ligne complète avec gestion de panier et système de paiement intégré.</p>
-    </article>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Matthéo K.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="bts-sio.html">BTS SIO</a></li>
+                <li><a href="projets.html" class="active">Projets</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+                <li><a href="veille.html">Veille</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Carte Projet 2 -->
-    <article class="card">
-        <h3>Projet 2 : Application de Gestion</h3>
-        <p>Création d'un tableau de bord interactif permettant la visualisation de données en temps réel.</p>
-    </article>
+    <section id="projets">
+        <h2 class="section-title">Mes Projets</h2>[cite: 1]
+        <p class="section-subtitle">Cliquez sur un projet pour consulter le dossier technique PDF correspondant</p>[cite: 1]
 
-    <!-- Carte Projet 3 -->
-    <article class="card">
-        <h3>Projet 3 : Portfolio Personnel</h3>
-        <p>Conception et intégration d'un site web vitrine responsive pour présenter des projets créatifs.</p>
-    </article>
-</div><!-- Fichier : projets.html -->
-<h2>Mes Projets</h2>
-<p style="margin-top: 0.5rem; color: #64748b;">Voici quelques-unes de mes réalisations :</p>
+        <div class="grid-2">
+            <a href="pdf/Twill_Laravel_AREA17.pdf" target="_blank" style="text-decoration:none; color:inherit;">[cite: 1]
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-layer-group card-icon"></i>
+                        <div>
+                            <h3 class="card-title">Développement Twill CMS & Laravel</h3>[cite: 1]
+                            <span style="font-size:0.8rem; color:var(--text-muted);">AREA 17 - Paris</span>[cite: 1]
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9rem;">Création de sites sur-mesure et audit des vulnérabilités sur des architectures Laravel avancées.</p>[cite: 1]
+                    <div class="tag-container">
+                        <span class="tag">Laravel</span>[cite: 1]
+                        <span class="tag">Twill CMS</span>[cite: 1]
+                        <span class="tag">PHP</span>[cite: 1]
+                        <span class="tag">Sécurité</span>[cite: 1]
+                    </div>
+                </div>
+            </a>
 
-<div style="display: grid; gap: 1.5rem; margin-top: 2rem;">
-    <article style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-        <h3>Projet 1 : Application Web</h3>
-        <p>Une application intéractive développée avec HTML, CSS et JavaScript.</p>
-    </article>
+            <a href="pdf/SIJE_React_Node.pdf" target="_blank" style="text-decoration:none; color:inherit;">[cite: 1]
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fab fa-react card-icon"></i>
+                        <div>
+                            <h3 class="card-title">Plateforme Web React.js & Node.js</h3>[cite: 1]
+                            <span style="font-size:0.8rem; color:var(--text-muted);">Projet SIJE - Étampes</span>[cite: 1]
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9rem;">Développement frontend/backend et automatisation des postes de travail via Docker.</p>[cite: 1]
+                    <div class="tag-container">
+                        <span class="tag">React.js</span>[cite: 1]
+                        <span class="tag">Node.js</span>[cite: 1]
+                        <span class="tag">Docker</span>[cite: 1]
+                    </div>
+                </div>
+            </a>
 
-    <article style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-        <h3>Projet 2 : Site Vitrine</h3>
-        <p>Création d'un site complet responsive et optimisé pour le référencement.</p>
-    </article>
-</div>
+            <a href="pdf/EPNAK_Automation.pdf" target="_blank" style="text-decoration:none; color:inherit;">[cite: 1]
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-robot card-icon"></i>
+                        <div>
+                            <h3 class="card-title">Automatisation des Comptes & Admin GLPI</h3>[cite: 1]
+                            <span style="font-size:0.8rem; color:var(--text-muted);">EPNAK - Évry</span>[cite: 1]
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9rem;">Scripts d'automatisation des entrées/sorties du personnel et administration du parc informatique.</p>[cite: 1]
+                    <div class="tag-container">
+                        <span class="tag">GLPI</span>[cite: 1]
+                        <span class="tag">Power Automate</span>[cite: 1]
+                        <span class="tag">Excel</span>[cite: 1]
+                    </div>
+                </div>
+            </a>
+
+            <a href="pdf/Integration_Automation.pdf" target="_blank" style="text-decoration:none; color:inherit;">[cite: 1]
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-microchip card-icon"></i>
+                        <div>
+                            <h3 class="card-title">Optimisation & Intégration Systèmes</h3>[cite: 1]
+                            <span style="font-size:0.8rem; color:var(--text-muted);">Aplus Systèmes Automation</span>[cite: 1]
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9rem;">Tests des composants matériels, maintenance préventive et configuration optimale des totems interactifs.</p>[cite: 1]
+                    <div class="tag-container">
+                        <span class="tag">Hardware</span>[cite: 1]
+                        <span class="tag">Réseaux</span>[cite: 1]
+                        <span class="tag">Configuration</span>[cite: 1]
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 60px;">Expériences Professionnelles</h2>[cite: 1]
+        <p class="section-subtitle">Missions et réalisations en entreprise</p>[cite: 1]
+
+        <div class="card">
+            <div>
+                <h3 class="card-title"><i class="fas fa-briefcase card-icon"></i> Full-Stack Engineer Apprentice - AREA 17</h3>[cite: 1]
+                <p style="color: var(--primary-accent); font-weight: 600;">Paris (75) | Janv. 2026 - Sept. 2026</p>[cite: 1]
+            </div>
+            <ul class="bullet-list">
+                <li>Création de sites internet dynamique avec le CMS Twill et le framework Laravel.</li>[cite: 1]
+                <li>Audit approfondi des vulnérabilités sécurité du modèle de projet.</li>[cite: 1]
+                <li>Optimisation des performances côté serveur et gestion des requêtes SQL.</li>[cite: 1]
+            </ul>
+        </div>
+
+        <div class="card">
+            <div>
+                <h3 class="card-title"><i class="fas fa-user-shield card-icon"></i> Informaticien Support (Stagiaire) - EPNAK</h3>[cite: 1]
+                <p style="color: var(--primary-accent); font-weight: 600;">Évry-Courcouronnes (91) | Janv. 2025 - Fév. 2025</p>[cite: 1]
+            </div>
+            <ul class="bullet-list">
+                <li>Automatisation de la création et de la désactivation des comptes utilisateurs Active Directory.</li>[cite: 1]
+                <li>Administration quotidienne du gestionnaire de parc informatique GLPI.</li>[cite: 1]
+                <li>Traitement automatisé des données relatives aux entrées et départs du personnel avec Excel.</li>[cite: 1]
+            </ul>
+        </div>
+
+        <div class="card">
+            <div>
+                <h3 class="card-title"><i class="fas fa-code card-icon"></i> Développeur Web (Stagiaire) - SIJE</h3>[cite: 1]
+                <p style="color: var(--primary-accent); font-weight: 600;">Étampes (91) | Mai 2024 - Juin 2024</p>[cite: 1]
+            </div>
+            <ul class="bullet-list">
+                <li>Développement complet du site internet de l'organisme en Node.js et React.js.</li>[cite: 1]
+                <li>Création de l'environnement de développement conteneurisé avec Docker.</li>[cite: 1]
+                <li>Maintenance du parc informatique et automatisation de l'allumage/extinction programmée des postes.</li>[cite: 1]
+            </ul>
+        </div>
+
+        <div class="card">
+            <div>
+                <h3 class="card-title"><i class="fas fa-tools card-icon"></i> Technicien d'Intégration (Stagiaire) - Aplus Systèmes Automation</h3>[cite: 1]
+                <p style="color: var(--primary-accent); font-weight: 600;">Saint-Michel-sur-Orge (91) | Nov. 2022 - Déc. 2022 & Mars 2023 - Avr. 2023</p>[cite: 1]
+            </div>
+            <ul class="bullet-list">
+                <li>Intégration, assemblage et bancs de tests sur les produits informatiques industriels.</li>[cite: 1]
+                <li>Remplacement et diagnostic de composants matériels défectueux.</li>[cite: 1]
+                <li>Configuration et optimisation logicielle des totems d'affichage interactifs.</li>[cite: 1]
+            </ul>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
