@@ -49,14 +49,13 @@ body::after {
     bottom: -100px;
     right: -100px;
 }
-
 header {
     position: fixed;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 95%; /* Passe de 90% à 95% */
-    max-width: 1350px; /* Passe de 1200px à 1350px */
+    width: 95%;
+    max-width: 1400px;
     z-index: 1000;
 }
 
@@ -83,7 +82,7 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 8px; /* Réduit l'espace entre les boutons (était à 20px) */
+    gap: 10px; /* Espace réduit entre chaque titre */
     list-style: none;
     align-items: center;
 }
@@ -91,15 +90,14 @@ nav {
 .nav-links a {
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 0.78rem; /* Réduit légèrement la taille du texte */
+    font-size: 0.8rem; /* Taille légèrement plus compacte */
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
-    padding: 4px 6px; /* Réduit les marges internes autour du texte */
-    white-space: nowrap; /* Empêche le texte de se couper sur deux lignes */
+    padding: 5px 8px; /* Marge interne réduite */
+    white-space: nowrap; /* Empêche les retours à la ligne */
 }
-
 .nav-links a:hover, .nav-links a.active {
     color: var(--primary-accent);
     text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
