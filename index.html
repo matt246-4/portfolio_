@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- MÉTADONNÉES DE BASE -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Portfolio | Développeur & Créatif</title>
     
-    <!-- LIAISON AVEC LA FEUILLE DE STYLE EXTERNE -->
+    <!-- Lien vers votre fichier CSS externe -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ========================================== -->
-    <!-- EN-TÊTE : Barre de navigation du site      -->
-    <!-- Explication : Liens vers les ID des sections-->
-    <!-- ========================================== -->
+    <!-- EN-TÊTE ET NAVIGATION -->
     <header>
         <nav>
             <div class="logo">
@@ -31,18 +27,71 @@
     </header>
 
     <main>
-        <!-- SECTION 1 : Accueil (embarquée dans la page principale) -->
+        <!-- SECTION 1 : ACCUEIL -->
         <section id="accueil" class="hero">
             <h1>Bonjour, je suis [Votre Prénom]</h1>
             <p>Développeur Web Full-Stack passionné par la création d'expériences numériques modernes.</p>
             <a href="#projets" class="btn">Découvrir mes projets</a>
         </section>
 
-        <!-- CONTENEURS POUR LE CHARGEMENT DES AUTRES SECTIONS -->
-        <section id="apropos"></section>
-        <section id="projets"></section>
-        <section id="competences"></section>
-        <section id="contact"></section>
+        <!-- SECTION 2 : À PROPOS -->
+        <section id="apropos">
+            <h2>À propos de moi</h2>
+            <p>Développeur passionné avec une solide formation en informatique. J'aime concevoir des applications web fluides, performantes et intuitives. Mon objectif est d'apporter des solutions concrètes aux problèmes complexes.</p>
+            <br>
+            <p>En constante veille technologique, je m'intéresse particulièrement aux architectures modernes, à l'expérience utilisateur (UX) et au développement propre et maintenable.</p>
+        </section>
+
+        <!-- SECTION 3 : PROJETS -->
+        <section id="projets">
+            <h2>Mes Projets</h2>
+            <p>Voici quelques-unes de mes réalisations récentes :</p>
+            <div class="grid">
+                <article class="card">
+                    <h3>Projet 1 : Site E-commerce</h3>
+                    <p>Développement d'une boutique en ligne complète avec gestion de panier et système de paiement intégré.</p>
+                </article>
+                <article class="card">
+                    <h3>Projet 2 : Application de Gestion</h3>
+                    <p>Création d'un tableau de bord interactif permettant la visualisation de données en temps réel.</p>
+                </article>
+                <article class="card">
+                    <h3>Projet 3 : Portfolio Personnel</h3>
+                    <p>Conception et intégration d'un site web vitrine responsive pour présenter des projets créatifs.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECTION 4 : COMPÉTENCES -->
+        <section id="competences">
+            <h2>Mes Compétences</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Front-End</h3>
+                    <p>HTML5, CSS3, JavaScript, React, Tailwind CSS</p>
+                </div>
+                <div class="card">
+                    <h3>Back-End</h3>
+                    <p>Node.js, Express, Python, SQL, MongoDB</p>
+                </div>
+                <div class="card">
+                    <h3>Outils & DevOps</h3>
+                    <p>Git, GitHub, Docker, VS Code, Figma</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5 : CONTACT -->
+        <section id="contact">
+            <h2>Me Contacter</h2>
+            <p>Un projet en tête ou une opportunité d'emploi ? N'hésitez pas à me laisser un message.</p>
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Votre nom" required>
+                <input type="email" name="email" placeholder="Votre adresse e-mail" required>
+                <textarea name="message" rows="5" placeholder="Votre message..." required></textarea>
+                <button type="submit" class="btn">Envoyer le message</button>
+            </form>
+        </section>
     </main>
 
     <!-- PIED DE PAGE -->
@@ -50,91 +99,5 @@
         <p>&copy; 2026 - Tous droits réservés | Développé avec passion</p>
     </footer>
 
-    <!-- SCRIPT DE CHARGEMENT CONTINU DES FICHIERS HTML -->
-    <script>
-        function chargerSection(idConteneur, fichier) {
-            fetch(fichier)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById(idConteneur).innerHTML = data;
-                })
-                .catch(error => console.error("Erreur de chargement : " + fichier, error));
-        }
-
-        // Chargement automatique des sous-sections dans la page unique
-        chargerSection('apropos', 'apropos.html');
-        chargerSection('projets', 'projets.html');
-        chargerSection('competences', 'competences.html');
-        chargerSection('contact', 'contact.html');
-    </script>
-</body>
-</html><!-- Fichier : index.html -->
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <!-- NAVIGATION : Les liens pointent vers les ID des sections plus bas -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#apropos">À propos</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <!-- Section 1 : Accueil (définie directement ici) -->
-        <section id="accueil" class="hero">
-            <h1>Bonjour, je suis [Ton Prénom]</h1>
-            <p>Développeur passionné. Défilez vers le bas pour découvrir mon travail !</p>
-            <a href="#projets" class="btn">Voir mes projets</a>
-        </section>
-
-        <!-- Section 2 : Emplacement où sera chargé le fichier apropos.html -->
-        <section id="apropos">
-            <!-- Le contenu de apropos.html s'affichera ici -->
-        </section>
-
-        <!-- Section 3 : Emplacement où sera chargé le fichier projets.html -->
-        <section id="projets">
-            <!-- Le contenu de projets.html s'affichera ici -->
-        </section>
-
-        <!-- Section 4 : Emplacement où sera chargé le fichier contact.html -->
-        <section id="contact">
-            <!-- Le contenu de contact.html s'affichera ici -->
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 - Mon Portfolio</p>
-    </footer>
-
-    <!-- SCRIPT JAVASCRIPT : Charge les pages externes dans la page principale -->
-    <script>
-        // Fonction pour charger un fichier HTML externe dans un conteneur
-        function chargerSection(idConteneur, fichier) {
-            fetch(fichier)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById(idConteneur).innerHTML = data;
-                })
-                .catch(error => console.error("Erreur de chargement de " + fichier, error));
-        }
-
-        // On charge chaque fichier séparé dans sa section respective
-        chargerSection('apropos', 'apropos.html');
-        chargerSection('projets', 'projets.html');
-        chargerSection('contact', 'contact.html');
-    </script>
 </body>
 </html>
