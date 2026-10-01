@@ -3,6 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matthéo KESSIE - Portfolio BTS SIO SISR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Matthéo K.</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="bts-sio.html">BTS SIO</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+                <li><a href="veille.html">Veille</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <h1 class="hero-title">Matthéo Kessie</h1>[cite: 1]
+        <h2 class="hero-subtitle">BTS SIO (Option SISR)</h2>[cite: 1]
+        <p class="hero-quote">
+            "Bienvenue sur mon portfolio ! Je m'appelle Matthéo Kessie, étudiant passionné d'informatique et de réseau. Découvrez mon parcours, mes projets et mes compétences acquises lors de mon cursus en BTS SIO."[cite: 1]
+        </p>
+        <div class="hero-buttons">
+            <a href="bts-sio.html" class="btn btn-primary">Commencer la visite <i class="fas fa-arrow-right"></i></a>
+            <button id="open-cv-btn" class="btn btn-outline"><i class="fas fa-file-pdf"></i> Mon CV</button>
+        </div>
+    </section>
+
+    <!-- MODALE POP-UP CV -->
+    <div id="cv-modal" class="modal">
+        <div class="modal-content" style="height: 85vh; max-width: 850px; display: flex; flex-direction: column;">
+            <span class="close-modal" id="close-cv-modal">&times;</span>
+            <h2 style="margin-bottom: 15px; color: var(--primary-accent);"><i class="fas fa-file-pdf"></i> Curriculum Vitae - Matthéo KESSIE</h2>[cite: 1]
+            <iframe src="CV matt paris.pdf" width="100%" height="100%" style="border: none; border-radius: 8px; flex-grow: 1;"></iframe>[cite: 1]
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Portfolio | Développeur & Créatif</title>
     
     <!-- Lien vers votre fichier CSS externe -->
