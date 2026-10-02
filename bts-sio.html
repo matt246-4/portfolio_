@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTS SIO - Matthéo KESSIE</title>
+    <title>BTS SIO & Parcours - Matthéo KESSIE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -12,7 +12,7 @@
 
     <header>
         <nav>
-            <div class="logo">Matthéo K.</div>
+            <a href="index.html" class="logo">Matthéo K.</a>
             <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="bts-sio.html" class="active">BTS SIO</a></li>
@@ -160,6 +160,41 @@
                 </div>
             </div>
         </div>
+
+        <h2 class="section-title" style="margin-top: 60px;">Mon Parcours</h2>
+        <p class="section-subtitle">Formations et évolutions académiques</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-date">2025 - 2026</span>
+                <div class="card" style="margin-bottom:0;">
+                    <h3 class="card-title">Licence 3 MIAGE</h3>
+                    <p style="color: var(--primary-accent); font-weight: 600; font-size: 0.9rem;">Université Paris 1 Panthéon-Sorbonne</p>
+                    <p style="font-size: 0.9rem; margin-top: 8px;">Méthodes Informatiques Appliquées à la Gestion des Entreprises.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-date">2023 - 2025</span>
+                <div class="card" style="margin-bottom:0;">
+                    <h3 class="card-title">BTS SIO Option SISR</h3>
+                    <p style="color: var(--primary-accent); font-weight: 600; font-size: 0.9rem;">Lycée Polyvalent Geoffroy Saint Hilaire, Étampes</p>
+                    <p style="font-size: 0.9rem; margin-top: 8px;">Spécialisation dans les solutions d'infrastructure, systèmes et réseaux.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="timeline-date">2020 - 2023</span>
+                <div class="card" style="margin-bottom:0;">
+                    <h3 class="card-title">Baccalauréat Professionnel Systèmes Numériques</h3>
+                    <p style="color: var(--primary-accent); font-weight: 600; font-size: 0.9rem;">Lycée Polyvalent Nikola Tesla, Dourdan</p>
+                    <p style="font-size: 0.9rem; margin-top: 8px;">Option C : Réseaux Informatiques et Systèmes Communicants.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- MODALE POP-UP BADGES -->
@@ -175,221 +210,6 @@
 
             <div class="modal-section">
                 <div class="modal-label use"><i class="fas fa-rocket"></i> Utilité en Entreprise</div>
-                <p id="skill-modal-use" class="modal-text"></p>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html><!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTS SIO & Parcours - Matthéo KESSIE</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <header>
-        <nav>
-            <a href="index.html" class="logo">Matthéo K.</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="bts-sio.html" class="active">BTS SIO</a></li>
-                <li><a href="projets.html">Projets</a></li>
-                <li><a href="certifications.html">Certifications</a></li>
-                <li><a href="veille.html">Veille</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="bts-sio">
-        <h2 class="section-title">Le BTS SIO</h2>[cite: 1]
-
-        <div class="card" style="margin-bottom: 25px;">
-            <h3 class="card-title" style="color: var(--primary-accent); font-size: 1.2rem; margin-bottom: 15px;">
-                Qu'est-ce que le BTS SIO ?[cite: 1]
-            </h3>
-            <p style="font-size: 0.95rem; line-height: 1.7;">
-                Le BTS SIO (Services Informatiques aux Organisations) est un diplôme d'État de niveau 5 (Bac+2) qui forme des professionnels capables de répondre aux besoins de transformation numérique des organisations. Je prépare actuellement ce diplôme avec une spécialisation en SISR. À l'issue de cette formation, je poursuivrai mon cursus en Licence 3 MIAGE à l'Université Paris 1 Panthéon-Sorbonne.[cite: 1]
-            </p>
-        </div>
-
-        <div class="grid-2" style="margin-bottom: 40px;">
-            <div class="card" style="margin-bottom: 0;">
-                <div class="card-header">
-                    <i class="fas fa-code card-icon" style="color: #ff416c;"></i>
-                    <div>
-                        <h3 class="card-title" style="font-size: 1.2rem;">Option SLAM</h3>[cite: 1]
-                        <span style="font-size: 0.75rem; color: #ff416c; font-weight: 700; letter-spacing: 0.5px;">SOLUTIONS LOGICIELLES ET APPLICATIONS MÉTIERS</span>[cite: 1]
-                    </div>
-                </div>
-                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">
-                    L'option SLAM se concentre sur le cycle de vie des applications, formant l'étudiant à l'analyse des besoins, à la programmation de solutions logicielles et à la gestion des bases de données.[cite: 1]
-                </p>
-            </div>
-
-            <div class="card" style="margin-bottom: 0; border-color: rgba(0, 242, 254, 0.4);">
-                <div class="card-header">
-                    <i class="fas fa-network-wired card-icon"></i>
-                    <div>
-                        <h3 class="card-title" style="font-size: 1.2rem;">Option SISR</h3>[cite: 1]
-                        <span style="font-size: 0.75rem; color: var(--primary-accent); font-weight: 700; letter-spacing: 0.5px;">SOLUTIONS D'INFRASTRUCTURE, SYSTÈMES ET RÉSEAUX</span>[cite: 1]
-                    </div>
-                </div>
-                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">
-                    L'option SISR est dédiée à la conception, à la maintenance et à la sécurisation des architectures réseaux, l'administration de serveurs et la garantie de la disponibilité des données.[cite: 1]
-                </p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="tab-menu">
-                <button class="tab-btn active" onclick="switchTab('s1', event)">Semestre 1</button>[cite: 1]
-                <button class="tab-btn" onclick="switchTab('s2', event)">Semestre 2</button>[cite: 1]
-                <button class="tab-btn" onclick="switchTab('a2', event)">Année 2</button>[cite: 1]
-            </div>
-
-            <div id="tab-s1" class="tab-content active">
-                <div class="skills-group">
-                    <div class="skills-group-title">Réseaux & Infrastructure</div>[cite: 1]
-                    <div class="skills-badge-list">
-                        <span class="skill-badge" onclick="showSkillInfo('TCP/IP')">TCP/IP</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('VLAN')">VLAN</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('Routage')">Routage</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('VPN')">VPN</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('DNS / DHCP')">DNS / DHCP</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('Firewall')">Firewall</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('Wi-Fi')">Wi-Fi</span>[cite: 1]
-                    </div>
-                </div>
-
-                <div class="skills-group">
-                    <div class="skills-group-title">Systèmes</div>[cite: 1]
-                    <div class="skills-badge-list">
-                        <span class="skill-badge" onclick="showSkillInfo('Linux')">Linux</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('Windows Server')">Windows Server</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('Active Directory')">Active Directory</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('Virtualisation')">Virtualisation</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('Nginx')">Nginx</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('SSH')">SSH</span>[cite: 1]
-                    </div>
-                </div>
-
-                <div class="skills-group">
-                    <div class="skills-group-title">Outils</div>[cite: 1]
-                    <div class="skills-badge-list">
-                        <span class="skill-badge" onclick="showSkillInfo('Wireshark')">Wireshark</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('Cisco Packet Tracer')">Cisco Packet Tracer</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('Git')">Git</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('Bash')">Bash</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('HTML / CSS')">HTML / CSS</span>[cite: 1]
-                    </div>
-                </div>
-            </div>
-
-            <div id="tab-s2" class="tab-content">
-                <div class="skills-group">
-                    <div class="skills-group-title">Réseaux & Infrastructure (S2)</div>[cite: 1]
-                    <div class="skills-badge-list">
-                        <span class="skill-badge" onclick="showSkillInfo('VLAN')">VLAN Inter-Switch</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('Routage')">Routage Dynamique (OSPF)</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('VPN')">VPN IPsec</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('Firewall')">PFSense / Firewall</span>[cite: 1]
-                    </div>
-                </div>
-
-                <div class="skills-group">
-                    <div class="skills-group-title">Systèmes & Services (S2)</div>[cite: 1]
-                    <div class="skills-badge-list">
-                        <span class="skill-badge" onclick="showSkillInfo('Linux')">Linux Debian</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('Windows Server')">Windows Server (GPO)</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('Active Directory')">Active Directory Services</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('SSH')">SSH & Clés RSA</span>[cite: 1]
-                    </div>
-                </div>
-
-                <div class="skills-group">
-                    <div class="skills-group-title">Outils & Supervision (S2)</div>[cite: 1]
-                    <div class="skills-badge-list">
-                        <span class="skill-badge" onclick="showSkillInfo('Wireshark')">Wireshark</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('Bash')">Scripts Bash</span>[cite: 1]
-                    </div>
-                </div>
-            </div>
-
-            <div id="tab-a2" class="tab-content">
-                <div class="skills-group">
-                    <div class="skills-group-title">Infrastructures Avancées</div>[cite: 1]
-                    <div class="skills-badge-list">
-                        <span class="skill-badge" onclick="showSkillInfo('Virtualisation')">Proxmox / VMware</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('Nginx')">Nginx Reverse-Proxy</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('VPN')">VPN OpenVPN</span>[cite: 1]
-                    </div>
-                </div>
-
-                <div class="skills-group">
-                    <div class="skills-group-title">Administration & Automatisation</div>[cite: 1]
-                    <div class="skills-badge-list">
-                        <span class="skill-badge" onclick="showSkillInfo('Active Directory')">Active Directory & PowerShell</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('Git')">Git / GitLab</span>[cite: 1]
-                        <span class="skill-badge" onclick="showSkillInfo('Bash')">Automation Shell</span>[cite: 1]
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="section-title" style="margin-top: 60px;">Mon Parcours</h2>[cite: 1]
-        <p class="section-subtitle">Formations et évolutions académiques</p>[cite: 1]
-
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <span class="timeline-date">2025 - 2026</span>[cite: 1]
-                <div class="card" style="margin-bottom:0;">
-                    <h3 class="card-title">Licence 3 MIAGE</h3>[cite: 1]
-                    <p style="color: var(--primary-accent); font-weight: 600; font-size: 0.9rem;">Université Paris 1 Panthéon-Sorbonne</p>[cite: 1]
-                    <p style="font-size: 0.9rem; margin-top: 8px;">Méthodes Informatiques Appliquées à la Gestion des Entreprises.</p>[cite: 1]
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <span class="timeline-date">2023 - 2025</span>[cite: 1]
-                <div class="card" style="margin-bottom:0;">
-                    <h3 class="card-title">BTS SIO Option SISR</h3>[cite: 1]
-                    <p style="color: var(--primary-accent); font-weight: 600; font-size: 0.9rem;">Lycée Polyvalent Geoffroy Saint Hilaire, Étampes</p>[cite: 1]
-                    <p style="font-size: 0.9rem; margin-top: 8px;">Spécialisation dans les solutions d'infrastructure, systèmes et réseaux.</p>[cite: 1]
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <span class="timeline-date">2020 - 2023</span>[cite: 1]
-                <div class="card" style="margin-bottom:0;">
-                    <h3 class="card-title">Baccalauréat Professionnel Systèmes Numériques</h3>[cite: 1]
-                    <p style="color: var(--primary-accent); font-weight: 600; font-size: 0.9rem;">Lycée Polyvalent Nikola Tesla, Dourdan</p>[cite: 1]
-                    <p style="font-size: 0.9rem; margin-top: 8px;">Option C : Réseaux Informatiques et Systèmes Communicants.</p>[cite: 1]
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MODALE COMPÉTENCES -->
-    <div id="skill-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" id="close-skill-modal">&times;</span>
-            <h3 id="skill-modal-title" class="modal-title"></h3>
-            <div class="modal-section">
-                <div class="modal-label def"><i class="fas fa-book-open"></i> Définition</div>[cite: 1]
-                <p id="skill-modal-def" class="modal-text"></p>
-            </div>
-            <div class="modal-section">
-                <div class="modal-label use"><i class="fas fa-rocket"></i> Utilité en Entreprise</div>[cite: 1]
                 <p id="skill-modal-use" class="modal-text"></p>
             </div>
         </div>
