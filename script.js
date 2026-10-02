@@ -1,194 +1,121 @@
-/* =========================================================
-   BASE DE DONNÉES DES COMPÉTENCES
-========================================================= */
+// Gestion des Onglets (Semestres)
+function switchTab(tabId, event) {
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(content => content.classList.remove('active'));
 
-const skillsData = {
-    "TCP/IP": {
-        def: "Ensemble de protocoles de communication standardisés permettant le transfert de données sur un réseau informatique.",
-        use: "Assure la communication universelle et fiable entre tous les ordinateurs et périphériques connectés au réseau ou à Internet."
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    const targetContent = document.getElementById('tab-' + tabId);
+    if (targetContent) {
+        targetContent.classList.add('active');
+    }
+
+    if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+    }
+}
+
+// Données des Modales de Compétences
+const skillData = {
+    'TCP/IP': {
+        def: "Ensemble des protocoles fondamentaux permettant la communication et le transfert de données sur Internet et au sein des réseaux locaux.",
+        use: "Indispensable pour configurer les cartes réseaux, diagnostiquer les pannes de connectivité et structurer les adresses IP d'une entreprise."
     },
-    "VLAN": {
-        def: "Réseau local virtuel permettant de regrouper un ensemble de machines de manière logique et non physique.",
-        use: "Sépare les flux réseau (ex: Direction, Visiteurs, Serveurs) afin de renforcer la sécurité et réduire le trafic inutilisé."
+    'VLAN': {
+        def: "Technique d'isolation réseau permettant de créer plusieurs réseaux virtuels indépendants sur un même équipement physique.",
+        use: "Sépare les flux (ex: isoler le réseau Direction du réseau Invités) pour renforcer la sécurité et optimiser la bande passante."
     },
-    "Routage": {
-        def: "Mécanisme par lequel les paquets de données sont acheminés d'un réseau source à un réseau destination via des routeurs.",
-        use: "Permet de faire communiquer différents sous-réseaux et d'interconnecter l'entreprise à des sites distants ou à Internet."
+    'Routage': {
+        def: "Mécanisme qui achemine les paquets de données entre différents réseaux distants ou sous-réseaux.",
+        use: "Permet d'interconnecter plusieurs sites d'entreprise et d'assurer que l'information emprunte le chemin le plus rapide et fiable."
     },
-    "VPN": {
-        def: "Réseau privé virtuel créant un tunnel chiffré et sécurisé à travers un réseau public comme Internet.",
-        use: "Permet aux collaborateurs en télétravail d'accéder en toute sécurité aux ressources internes de l'entreprise."
+    'VPN': {
+        def: "Tunnel sécurisé et chiffré établi entre deux points d'un réseau public comme Internet.",
+        use: "Permet aux collaborateurs en télétravail d'accéder au réseau interne de l'entreprise en toute sécurité."
     },
-    "DNS / DHCP": {
-        def: "DNS traduit les noms de domaine en IP. DHCP attribue automatiquement les configurations IP aux équipements.",
-        use: "Simplifie la navigation réseau et automatise l'intégration de nouveaux équipements sans intervention manuelle."
+    'DNS / DHCP': {
+        def: "DNS traduit les noms de domaine en adresses IP. DHCP attribue automatiquement les adresses IP aux équipements.",
+        use: "Automatise la connexion des postes clients et simplifie la navigation sur les services internes et externes."
     },
-    "Firewall": {
-        def: "Pare-feu matériel ou logiciel filtrant le trafic réseau entrant et sortant selon des règles de sécurité prédéfinies.",
-        use: "Bloque les accès non autorisés et protège le réseau informatique contre les cyberattaques externes."
+    'Firewall': {
+        def: "Système de filtrage de sécurité contrôlant le trafic entrant et sortant selon des règles prédéfinies.",
+        use: "Protège le réseau d'entreprise contre les intrusions, attaques et accès non autorisés."
     },
-    "Wi-Fi": {
-        def: "Technologie de transmission sans fil utilisant des ondes radio pour relier des équipements au réseau local.",
-        use: "Offre de la mobilité aux employés et un accès Internet restreint pour les visiteurs."
+    'Wi-Fi': {
+        def: "Technologie de transmission de données sans fil utilisant des ondes radio.",
+        use: "Assure la mobilité des collaborateurs tout en appliquant des normes de chiffrement strictes (WPA3/Enterprise)."
     },
-    "Linux": {
-        def: "Système d'exploitation libre et open-source reconnu pour sa stabilité, sa sécurité et sa légèreté.",
-        use: "Utilisé pour faire tourner la majorité des serveurs web, bases de données et infrastructures critiques d'entreprise."
+    'Linux': {
+        def: "Système d'exploitation open-source réputé pour sa stabilité, sa sécurité et sa légèreté.",
+        use: "Base essentielle pour héberger des serveurs web, des bases de données et des services d'infrastructures critiques."
     },
-    "Windows Server": {
-        def: "Système d'exploitation serveur édité par Microsoft offrant des services d'infrastructures centralisés.",
-        use: "Gère l'annuaire d'entreprise, les autorisations des utilisateurs, le partage de fichiers et les stratégies de groupe."
+    'Windows Server': {
+        def: "Système d'exploitation serveur édité par Microsoft offrant une gestion centralisée d'un parc informatique.",
+        use: "Gère les identités, les droits d'accès, l'annuaire Active Directory et le déploiement centralisé de stratégies."
     },
-    "Active Directory": {
-        def: "Service d'annuaire développé par Microsoft centralisant la gestion des utilisateurs, postes et droits sur un réseau.",
-        use: "Permet aux administrateurs d'attribuer des accès sécurisés et de déployer des règles (GPO) sur tous les postes."
+    'Active Directory': {
+        def: "Annuaire propriétaire Microsoft qui centralise la gestion des utilisateurs, des ordinateurs et des droits.",
+        use: "Permet à l'administrateur de gérer les autorisations (GPO) et d'authentifier les utilisateurs sur tout le domaine."
     },
-    "Virtualisation": {
+    'Virtualisation': {
         def: "Technologie permettant d'exécuter plusieurs systèmes d'exploitation virtuels sur un seul serveur physique.",
-        use: "Optimise l'utilisation des ressources matérielles, réduit les coûts d'infrastructure et facilite la sauvegarde."
+        use: "Optimise l'utilisation des ressources matérielles, réduit les coûts d'infrastructure et simplifie les sauvegardes."
     },
-    "Nginx": {
-        def: "Serveur web, proxy inverse et répartiteur de charge haute performance.",
-        use: "Achemine le trafic web de manière rapide, sécurise le serveur principal (Reverse Proxy) et gère les certificats SSL."
+    'Nginx': {
+        def: "Serveur web et proxy inverse ultra-rapide conçu pour gérer de fortes charges de trafic.",
+        use: "Sert de point d'entrée sécurisé (Reverse Proxy) et de répartiteur de charge devant les applications d'entreprise."
     },
-    "SSH": {
-        def: "Protocole de communication sécurisé permettant de prendre le contrôle d'une machine distante à travers une ligne de commande.",
-        use: "Permet l'administration et la maintenance à distance des serveurs en toute confidentialité."
+    'SSH': {
+        def: "Protocole de communication chiffré permettant d'administrer des machines distantes en ligne de commande.",
+        use: "Permet aux administrateurs de prendre le contrôle à distance des serveurs de manière totalement sécurisée."
     },
-    "Wireshark": {
-        def: "Analyseur de paquets réseau permettant de capturer et d'examiner le trafic en temps réel.",
-        use: "Diagnostic de pannes réseau, analyse approfondie de protocoles et détection d'anomalies de sécurité."
+    'Wireshark': {
+        def: "Outil d'analyse de la sécurité réseau capable de capturer et d'analyser le trafic en temps réel.",
+        use: "Permet de diagnostiquer les dysfonctionnements réseau et de repérer d'éventuelles anomalies ou attaques."
     },
-    "Cisco Packet Tracer": {
-        def: "Logiciel de simulation réseau édité par Cisco pour concevoir, configurer et dépanner des topologies d'infrastructures.",
-        use: "Permet de modéliser et tester des architectures réseau complexes avant leur déploiement physique réel."
+    'Cisco Packet Tracer': {
+        def: "Simulateur de réseau développé par Cisco pour concevoir et tester des topologies complexes.",
+        use: "Idéal pour modéliser des architectures réseau avant leur déploiement physique."
     },
-    "Git": {
-        def: "Système de contrôle de version décentralisé enregistrant l'historique des modifications apportées au code.",
-        use: "Facilite le travail d'équipe, le suivi des versions de logiciels ou de scripts d'automatisation et le retour en arrière."
+    'Git': {
+        def: "Système de contrôle de version distribué assurant le suivi des modifications de code.",
+        use: "Facilite le travail d'équipe, le versionnage des projets et le retour en arrière en cas d'erreur."
     },
-    "Bash": {
-        def: "Interprète de commandes shell sous Unix/Linux permettant d'exécuter des scripts automatisés.",
-        use: "Automatise la gestion quotidienne des serveurs (sauvegardes, création d'utilisateurs, mises à jour)."
+    'Bash': {
+        def: "Langage de commande et de script pour les systèmes d'exploitation Unix / Linux.",
+        use: "Automatise les tâches répétitives d'administration (sauvegardes, création d'utilisateurs, maintenance)."
     },
-    "HTML / CSS": {
-        def: "Langages de balisage et de style servant à structurer et concevoir des interfaces web visuelles.",
-        use: "Permet de concevoir des tableaux de bord, des portails captifs ou la documentation interne d'entreprise."
+    'HTML / CSS': {
+        def: "Langages fondamentaux du Web : HTML structure le contenu et CSS en assure la mise en forme.",
+        use: "Permet de concevoir des interfaces web professionnelles, ergonomiques et adaptatives."
     }
 };
 
-/* =========================================================
-   GESTION DES ONGLETS
-========================================================= */
+// Modale Compétences
+function showSkillInfo(skillKey) {
+    const modal = document.getElementById('skill-modal');
+    const title = document.getElementById('skill-modal-title');
+    const def = document.getElementById('skill-modal-def');
+    const use = document.getElementById('skill-modal-use');
 
-function switchTab(tabId, evt) {
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-
-    if (evt && evt.currentTarget) {
-        evt.currentTarget.classList.add('active');
-    }
-
-    const activeTab = document.getElementById('tab-' + tabId);
-    if (activeTab) {
-        activeTab.classList.add('active');
+    if (skillData[skillKey]) {
+        title.innerText = skillKey;
+        def.innerText = skillData[skillKey].def;
+        use.innerText = skillData[skillKey].use;
+        modal.style.display = 'flex';
     }
 }
 
-/* =========================================================
-   AFFICHAGE DES INFORMATIONS D'UNE COMPÉTENCE
-========================================================= */
-
-function showSkillInfo(skillName) {
-    const skillModal = document.getElementById('skill-modal');
-    const skillTitle = document.getElementById('skill-modal-title');
-    const skillDef = document.getElementById('skill-modal-def');
-    const skillUse = document.getElementById('skill-modal-use');
-
-    if (!skillModal) return;
-
-    const data = skillsData[skillName] || {
-        def: "Technologie essentielle enseignée au cours du cursus.",
-        use: "Permet d'assurer la gestion et la sécurité du système d'information."
-    };
-
-    if (skillTitle) skillTitle.innerText = skillName;
-    if (skillDef) skillDef.innerText = data.def;
-    if (skillUse) skillUse.innerText = data.use;
-
-    skillModal.style.display = 'flex';
-}
-
-/* =========================================================
-   INITIALISATION ET SÉCURISATION
-========================================================= */
-
+// Fermeture de la Modale
 document.addEventListener('DOMContentLoaded', () => {
+    const closeModalBtn = document.getElementById('close-skill-modal');
+    const modal = document.getElementById('skill-modal');
 
-    // 1. Modale CV
-    const cvModal = document.getElementById('cv-modal');
-    const openCvBtn = document.getElementById('open-cv-btn');
-    const closeCvModal = document.getElementById('close-cv-modal');
-
-    if (openCvBtn && cvModal) {
-        openCvBtn.addEventListener('click', () => cvModal.style.display = 'flex');
+    if (closeModalBtn && modal) {
+        closeModalBtn.onclick = () => modal.style.display = 'none';
+        window.onclick = (e) => {
+            if (e.target === modal) modal.style.display = 'none';
+        };
     }
-    if (closeCvModal && cvModal) {
-        closeCvModal.addEventListener('click', () => cvModal.style.display = 'none');
-    }
-
-    // 2. Modale Compétences
-    const skillModal = document.getElementById('skill-modal');
-    const closeSkillModal = document.getElementById('close-skill-modal');
-
-    if (closeSkillModal && skillModal) {
-        closeSkillModal.addEventListener('click', () => skillModal.style.display = 'none');
-    }
-
-    // 3. Fermeture modales au clic extérieur
-    window.addEventListener('click', (event) => {
-        if (cvModal && event.target === cvModal) cvModal.style.display = 'none';
-        if (skillModal && event.target === skillModal) skillModal.style.display = 'none';
-    });
-
-    // 4. Gestion de la Navigation Active
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    
-    let currentPage = window.location.pathname.split('/').pop();
-    if (!currentPage || currentPage === '') {
-        currentPage = 'index.html';
-    }
-
-    function updateActiveNavigation() {
-        let currentSection = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (window.pageYOffset >= sectionTop - 200) {
-                currentSection = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            if (!href) return;
-
-            link.classList.remove('active');
-
-            if (href.startsWith('#')) {
-                if (href.substring(1) === currentSection) {
-                    link.classList.add('active');
-                }
-            } else {
-                const linkPage = href.split('/').pop();
-                if (linkPage === currentPage && !currentSection) {
-                    link.classList.add('active');
-                }
-            }
-        });
-    }
-
-    window.addEventListener('scroll', updateActiveNavigation);
-    updateActiveNavigation();
 });
