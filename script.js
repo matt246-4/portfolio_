@@ -331,55 +331,54 @@ document.addEventListener(
             }
         );
 
-/* =================================================
-           MENU ACTIF SELON LA PAGE COURANTE OU LE SCROLL
-        ================================================= */
+/* =========================================================
+   MENU ACTIF SELON LA PAGE COURANTE OU LE SCROLL
+========================================================= */
 
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-links a');
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-links a');
 
-        function updateActiveNavigation() {
-            let currentSection = '';
+// Récupère uniquement le nom du fichier (ex: "certifications.html")
+let currentPage = window.location.pathname.split('/').pop();
+if (!currentPage || currentPage === '') {
+    currentPage = 'index.html';
+}
 
-            // 1. Détecte la section si on est sur une page mono-page avec ancres (#)
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (window.pageYOffset >= sectionTop - 200) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
+function updateActiveNavigation() {
+    let currentSection = '';
 
-            // 2. Met à jour la classe active selon l'URL ou la section
-            navLinks.forEach(link => {
-                const href = link.getAttribute('href');
-
-                if (href && href.startsWith('#')) {
-                    // Si le lien est une ancre (# section)
-                    if (href.substring(1) === currentSection) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                } else if (href) {
-                    // Si le lien est une page HTML complète
-                    if (href === currentPage) {
-                        link.classList.add('active');
-                    }
-                }
-            });
+    // 1. Détection de la section visible lors du scroll
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.pageYOffset >= sectionTop - 200) {
+            currentSection = section.getAttribute('id');
         }
+    });
 
-        window.addEventListener('scroll', updateActiveNavigation);
-        updateActiveNavigation();
+    // 2. Mise à jour de la classe active
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
 
+        // On retire systématiquement la classe active avant de tester
+        link.classList.remove('active');
 
-        /*
-           Lance une première fois la fonction
-           au chargement.
-        */
+        if (href.startsWith('#')) {
+            // Ancre sur la même page (ex: #accueil)
+            if (href.substring(1) === currentSection) {
+                link.classList.add('active');
+            }
+        } else {
+            // Lien vers un fichier HTML externe (ex: certifications.html)
+            // On extrait aussi le nom de fichier du href au cas où il y a un chemin relatif
+            const linkPage = href.split('/').pop();
+            
+            if (linkPage === currentPage && !currentSection) {
+                link.classList.add('active');
+            }
+        }
+    });
+}
 
-       
-
-    }
-);
+window.addEventListener('scroll', updateActiveNavigation);
+updateActiveNavigation();
