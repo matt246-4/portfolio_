@@ -331,81 +331,47 @@ document.addEventListener(
             }
         );
 
-
-        /* =================================================
-           MENU ACTIF PENDANT LE SCROLL
+/* =================================================
+           MENU ACTIF SELON LA PAGE COURANTE OU LE SCROLL
         ================================================= */
 
-        const sections =
-            document.querySelectorAll('section');
-
-        const navLinks =
-            document.querySelectorAll('.nav-links a');
-
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
         function updateActiveNavigation() {
+            let currentSection = '';
 
-            let current =
-                '';
-
-
-            sections.forEach(
-                section => {
-
-                    const sectionTop =
-                        section.offsetTop;
-
-
-                    if (
-                        window.pageYOffset >=
-                        sectionTop - 200
-                    ) {
-
-                        current =
-                            section.getAttribute('id');
-
-                    }
-
+            // 1. Détecte la section si on est sur une page mono-page avec ancres (#)
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    currentSection = section.getAttribute('id');
                 }
-            );
+            });
 
+            // 2. Met à jour la classe active selon l'URL ou la section
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
 
-            navLinks.forEach(
-                link => {
-
-                    link.classList.remove('active');
-
-
-                    const href =
-                        link.getAttribute('href');
-
-
-                    /*
-                       On ne traite que les liens
-                       qui pointent vers une section
-                       de la page actuelle.
-                    */
-
-                    if (
-                        href &&
-                        href.startsWith('#') &&
-                        href.substring(1) === current
-                    ) {
-
+                if (href && href.startsWith('#')) {
+                    // Si le lien est une ancre (# section)
+                    if (href.substring(1) === currentSection) {
                         link.classList.add('active');
-
+                    } else {
+                        link.classList.remove('active');
                     }
-
+                } else if (href) {
+                    // Si le lien est une page HTML complète
+                    if (href === currentPage) {
+                        link.classList.add('active');
+                    }
                 }
-            );
-
+            });
         }
 
-
-        window.addEventListener(
-            'scroll',
-            updateActiveNavigation
-        );
+        window.addEventListener('scroll', updateActiveNavigation);
+        updateActiveNavigation();
 
 
         /*
@@ -413,7 +379,7 @@ document.addEventListener(
            au chargement.
         */
 
-        updateActiveNavigation();
+       
 
     }
 );
