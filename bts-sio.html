@@ -65,156 +65,145 @@
             </div>
         </div>
 
-        <div class="card">
-            <div class="tab-menu">
-                <button class="tab-btn active" onclick="switchTab('s1', event)">Semestre 1</button>
-                <button class="tab-btn" onclick="switchTab('s2', event)">Semestre 2</button>
-                <button class="tab-btn" onclick="switchTab('a2', event)">Année 2</button>
-            </div>
+        <div class="card tabs">
+    <input type="radio" name="tabs" id="radio-s1" class="tab-radio" checked>
+    <input type="radio" name="tabs" id="radio-s2" class="tab-radio">
+    <input type="radio" name="tabs" id="radio-a2" class="tab-radio">
 
-            <div id="tab-s1" class="tab-content active">
-                <div class="skills-group">
-                    <div class="skills-group-title">Réseaux & Infrastructure</div>
-                    <div class="skills-badge-list">
-                        <span class="skill-badge" onclick="showSkillInfo('TCP/IP')">TCP/IP</span>
-                        <span class="skill-badge" onclick="showSkillInfo('VLAN')">VLAN</span>
-                        <span class="skill-badge" onclick="showSkillInfo('Routage')">Routage</span>
-                        <span class="skill-badge" onclick="showSkillInfo('VPN')">VPN</span>
-                        <span class="skill-badge" onclick="showSkillInfo('DNS / DHCP')">DNS / DHCP</span>
-                        <span class="skill-badge" onclick="showSkillInfo('Firewall')">Firewall</span>
-                        <span class="skill-badge" onclick="showSkillInfo('Wi-Fi')">Wi-Fi</span>
-                    </div>
-                </div>
+    <div class="tab-menu">
+        <label for="radio-s1" class="tab-btn">Semestre 1  (1er année)</label>
+        <label for="radio-s2" class="tab-btn">Semestre 2  (1er année)</label>
+        <label for="radio-a2" class="tab-btn">2ème Année</label>
+    </div>
 
-                <div class="skills-group">
-                    <div class="skills-group-title">Systèmes</div>
-                    <div class="skills-badge-list">
-                        <span class="skill-badge" onclick="showSkillInfo('Linux')">Linux</span>
-                        <span class="skill-badge" onclick="showSkillInfo('Windows Server')">Windows Server</span>
-                        <span class="skill-badge" onclick="showSkillInfo('Active Directory')">Active Directory</span>
-                        <span class="skill-badge" onclick="showSkillInfo('Virtualisation')">Virtualisation</span>
-                        <span class="skill-badge" onclick="showSkillInfo('Nginx')">Nginx</span>
-                        <span class="skill-badge" onclick="showSkillInfo('SSH')">SSH</span>
-                    </div>
-                </div>
-
-                <div class="skills-group">
-                    <div class="skills-group-title">Outils</div>
-                    <div class="skills-badge-list">
-                        <span class="skill-badge" onclick="showSkillInfo('Wireshark')">Wireshark</span>
-                        <span class="skill-badge" onclick="showSkillInfo('Cisco Packet Tracer')">Cisco Packet Tracer</span>
-                        <span class="skill-badge" onclick="showSkillInfo('Git')">Git</span>
-                        <span class="skill-badge" onclick="showSkillInfo('Bash')">Bash</span>
-                        <span class="skill-badge" onclick="showSkillInfo('HTML / CSS')">HTML / CSS</span>
-                    </div>
-                </div>
-            </div>
-
-            <div id="tab-s2" class="tab-content">
-                <div class="skills-group">
-                    <div class="skills-group-title">Réseaux & Infrastructure (S2)</div>
-                    <div class="skills-badge-list">
-                        <span class="skill-badge" onclick="showSkillInfo('VLAN')">VLAN Inter-Switch</span>
-                        <span class="skill-badge" onclick="showSkillInfo('Routage')">Routage Dynamique (OSPF)</span>
-                        <span class="skill-badge" onclick="showSkillInfo('VPN')">VPN IPsec</span>
-                        <span class="skill-badge" onclick="showSkillInfo('Firewall')">PFSense / Firewall</span>
-                    </div>
-                </div>
-
-                <div class="skills-group">
-                    <div class="skills-group-title">Systèmes & Services (S2)</div>
-                    <div class="skills-badge-list">
-                        <span class="skill-badge" onclick="showSkillInfo('Linux')">Linux Debian</span>
-                        <span class="skill-badge" onclick="showSkillInfo('Windows Server')">Windows Server (GPO)</span>
-                        <span class="skill-badge" onclick="showSkillInfo('Active Directory')">Active Directory Services</span>
-                        <span class="skill-badge" onclick="showSkillInfo('SSH')">SSH & Clés RSA</span>
-                    </div>
-                </div>
-
-                <div class="skills-group">
-                    <div class="skills-group-title">Outils & Supervision (S2)</div>
-                    <div class="skills-badge-list">
-                        <span class="skill-badge" onclick="showSkillInfo('Wireshark')">Wireshark</span>
-                        <span class="skill-badge" onclick="showSkillInfo('Bash')">Scripts Bash</span>
-                    </div>
-                </div>
-            </div>
-
-            <div id="tab-a2" class="tab-content">
-                <div class="skills-group">
-                    <div class="skills-group-title">Infrastructures Avancées</div>
-                    <div class="skills-badge-list">
-                        <span class="skill-badge" onclick="showSkillInfo('Virtualisation')">Proxmox / VMware</span>
-                        <span class="skill-badge" onclick="showSkillInfo('Nginx')">Nginx Reverse-Proxy</span>
-                        <span class="skill-badge" onclick="showSkillInfo('VPN')">VPN OpenVPN</span>
-                    </div>
-                </div>
-
-                <div class="skills-group">
-                    <div class="skills-group-title">Administration & Automatisation</div>
-                    <div class="skills-badge-list">
-                        <span class="skill-badge" onclick="showSkillInfo('Active Directory')">Active Directory & PowerShell</span>
-                        <span class="skill-badge" onclick="showSkillInfo('Git')">Git / GitLab</span>
-                        <span class="skill-badge" onclick="showSkillInfo('Bash')">Automation Shell</span>
-                    </div>
-                </div>
+    <!-- ========== SEMESTRE 1 ========== -->
+    <div id="tab-s1" class="tab-content">
+        <div class="skills-group">
+            <div class="skills-group-title">Réseaux & Infrastructure</div>
+            <div class="skills-badge-list">
+                
+                <a class="skill-badge" href="pdf/s1_vlan.pdf" target="_blank" rel="noopener">VLAN</a>
+                <a class="skill-badge" href="pdf/s1_routage.pdf" target="_blank" rel="noopener">Routage</a>
+                <a class="skill-badge" href="pdf/s1_vpn.pdf" target="_blank" rel="noopener">VPN</a>
+                <a class="skill-badge" href="pdf/s1_dns-dhcp.pdf" target="_blank" rel="noopener">DNS / DHCP</a>
+                <a class="skill-badge" href="pdf/s1_firewall.pdf" target="_blank" rel="noopener">Firewall</a>
+                <a class="skill-badge" href="pdf/s1_wifi.pdf" target="_blank" rel="noopener">Wi-Fi</a>
             </div>
         </div>
 
-        <h2 class="section-title" style="margin-top: 60px;">Mon Parcours</h2>
-        <p class="section-subtitle">Formations et évolutions académiques</p>
-
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <span class="timeline-date">2025 - 2026</span>
-                <div class="card" style="margin-bottom:0;">
-                    <h3 class="card-title">Licence 3 MIAGE</h3>
-                    <p style="color: var(--primary-accent); font-weight: 600; font-size: 0.9rem;">Université Paris 1 Panthéon-Sorbonne</p>
-                    <p style="font-size: 0.9rem; margin-top: 8px;">Méthodes Informatiques Appliquées à la Gestion des Entreprises.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <span class="timeline-date">2023 - 2025</span>
-                <div class="card" style="margin-bottom:0;">
-                    <h3 class="card-title">BTS SIO Option SISR</h3>
-                    <p style="color: var(--primary-accent); font-weight: 600; font-size: 0.9rem;">Lycée Polyvalent Geoffroy Saint Hilaire, Étampes</p>
-                    <p style="font-size: 0.9rem; margin-top: 8px;">Spécialisation dans les solutions d'infrastructure, systèmes et réseaux.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <span class="timeline-date">2020 - 2023</span>
-                <div class="card" style="margin-bottom:0;">
-                    <h3 class="card-title">Baccalauréat Professionnel Systèmes Numériques</h3>
-                    <p style="color: var(--primary-accent); font-weight: 600; font-size: 0.9rem;">Lycée Polyvalent Nikola Tesla, Dourdan</p>
-                    <p style="font-size: 0.9rem; margin-top: 8px;">Option C : Réseaux Informatiques et Systèmes Communicants.</p>
-                </div>
+        <div class="skills-group">
+            <div class="skills-group-title">Systèmes</div>
+            <div class="skills-badge-list">
+                <a class="skill-badge" href="pdf/s1_linux.pdf" target="_blank" rel="noopener">Linux</a>
+                <a class="skill-badge" href="pdf/s1_windows-server.pdf" target="_blank" rel="noopener">Windows Server</a>
+                <a class="skill-badge" href="pdf/s1_active-directory.pdf" target="_blank" rel="noopener">Active Directory</a>
+                <a class="skill-badge" href="pdf/s1_virtualisation.pdf" target="_blank" rel="noopener">Virtualisation</a>
+                <a class="skill-badge" href="pdf/s1_nginx.pdf" target="_blank" rel="noopener">Nginx</a>
+                <a class="skill-badge" href="pdf/s1_ssh.pdf" target="_blank" rel="noopener">SSH</a>
             </div>
         </div>
-    </section>
 
-    <!-- MODALE POP-UP BADGES -->
-    <div id="skill-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" id="close-skill-modal">&times;</span>
-            <h3 id="skill-modal-title" class="modal-title"></h3>
-            
-            <div class="modal-section">
-                <div class="modal-label def"><i class="fas fa-book-open"></i> Définition</div>
-                <p id="skill-modal-def" class="modal-text"></p>
-            </div>
-
-            <div class="modal-section">
-                <div class="modal-label use"><i class="fas fa-rocket"></i> Utilité en Entreprise</div>
-                <p id="skill-modal-use" class="modal-text"></p>
+        <div class="skills-group">
+            <div class="skills-group-title">Outils</div>
+            <div class="skills-badge-list">
+                <a class="skill-badge" href="pdf/s1_wireshark.pdf" target="_blank" rel="noopener">Wireshark</a>
+                <a class="skill-badge" href="pdf/s1_packet-tracer.pdf" target="_blank" rel="noopener">Cisco Packet Tracer</a>
+                <a class="skill-badge" href="pdf/s1_git.pdf" target="_blank" rel="noopener">Git</a>
+                <a class="skill-badge" href="pdf/s1_bash.pdf" target="_blank" rel="noopener">Bash</a>
+                <a class="skill-badge" href="pdf/s1_html-css.pdf" target="_blank" rel="noopener">HTML / CSS</a>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <!-- ========== SEMESTRE 2 ========== -->
+    <div id="tab-s2" class="tab-content">
+        <div class="skills-group">
+            <div class="skills-group-title">Réseaux & Infrastructure (S2)</div>
+            <div class="skills-badge-list">
+				<a class="skill-badge" href="pdf/s1_tcp-ip.pdf" target="_blank" rel="noopener">TCP/IP</a>
+                <a class="skill-badge" href="pdf/s2_vlan-inter-switch.pdf" target="_blank" rel="noopener">VLAN Inter-Switch</a>
+                
+                
+               
+            </div>
+        </div>
+		
+		
+        <div class="skills-group">
+            <div class="skills-group-title">Systèmes & Services (S2)</div>
+            <div class="skills-badge-list">
+                <a class="skill-badge" href="pdf/s2_linux-debian.pdf" target="_blank" rel="noopener">Linux Ubuntu</a>
+                <a class="skill-badge" href="pdf/s1_active-directory.pdf" target="_blank" rel="noopener">Active Directory</a>
+                <a class="skill-badge" href="pdf/s1_virtualisation.pdf" target="_blank" rel="noopener">Virtualisation</a>
+                
+                <a class="skill-badge" href="pdf/s1_ssh.pdf" target="_blank" rel="noopener">SSH</a>
+            </div>
+        </div>
+
+        <div class="skills-group">
+            <div class="skills-group-title">Outils</div>
+            <div class="skills-badge-list">
+                
+                <a class="skill-badge" href="pdf/s1_packet-tracer.pdf" target="_blank" rel="noopener">Cisco Packet Tracer</a>
+                
+               
+                
+            </div>
+        </div>
+    </div>
+	
+	
+	
+	<!-- ========== SEMESTRE 3 ========== -->
+	
+   <div id="tab-a2" class="tab-content">
+        <div class="skills-group">
+            <div class="skills-group-title">Réseaux & Infrastructure (S2)</div>
+            <div class="skills-badge-list">
+                <a class="skill-badge" href="pdf/s2_vlan-inter-switch.pdf" target="_blank" rel="noopener">VLAN Inter-Switch</a>
+                <a class="skill-badge" href="pdf/s2_routage-ospf.pdf" target="_blank" rel="noopener">Routage</a>
+                <a class="skill-badge" href="pdf/s2_vpn-ipsec.pdf" target="_blank" rel="noopener">VPN </a>
+                <a class="skill-badge" href="pdf/s2_pfsense.pdf" target="_blank" rel="noopener">PFSense / Firewall</a>
+				<a class="skill-badge" href="pdf/s2_pfsense.pdf" target="_blank" rel="noopener">Rondandance </a>
+            </div>
+        </div>
+		
+		
+        <div class="skills-group">
+            <div class="skills-group-title">Systèmes & Services (S2)</div>
+            <div class="skills-badge-list">
+                <a class="skill-badge" href="pdf/s2_linux-debian.pdf" target="_blank" rel="noopener">Linux Debian </a>
+				<a class="skill-badge" href="pdf/s2_pfsense.pdf" target="_blank" rel="noopener">Windows Server</a>
+                <a class="skill-badge" href="pdf/s1_active-directory.pdf" target="_blank" rel="noopener">Active Directory</a>
+                <a class="skill-badge" href="pdf/s1_virtualisation.pdf" target="_blank" rel="noopener">Virtualisation</a>
+                <a class="skill-badge" href="pdf/s1_nginx.pdf" target="_blank" rel="noopener">Nginx</a>
+                <a class="skill-badge" href="pdf/s1_ssh.pdf" target="_blank" rel="noopener">SSH</a>
+            </div>
+        </div>
+
+        <div class="skills-group">
+            <div class="skills-group-title">Outils</div>
+            <div class="skills-badge-list">
+                <a class="skill-badge" href="pdf/s1_wireshark.pdf" target="_blank" rel="noopener">Wireshark</a>
+                <a class="skill-badge" href="pdf/s1_packet-tracer.pdf" target="_blank" rel="noopener">Cisco Packet Tracer</a>
+                <a class="skill-badge" href="pdf/s1_git.pdf" target="_blank" rel="noopener">Git</a>
+                <a class="skill-badge" href="pdf/s1_bash.pdf" target="_blank" rel="noopener">Bash</a>
+                
+            </div>
+        </div>
+    </div>				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
