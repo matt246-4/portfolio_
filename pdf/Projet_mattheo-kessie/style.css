@@ -1,0 +1,135 @@
+
+/* Changer la couleur  */
+/* ajouter une image dans herder et centre */
+html, body {
+  overflow: hidden;
+}
+
+.header{
+float:center;
+width:1455px;  /*good mais faut mettre la meme taille pour les autres page ?? */
+
+height:100px;
+padding:10px;
+background-color:#D2B48C; 
+border:3px solid black;
+margin-left:30px;
+margin-top:10px;
+text-align: center;
+	}
+	.logo{
+		position: relative;
+		top: -100px;
+		left: -600px;
+	}
+	.balle{
+		position: relative;
+		top: -92px;
+		right: -619px;
+	}
+
+
+
+	.menu{
+margin-top:20px;
+margin-left:30px;
+float:left;
+width:120px;
+height:435px;/*pareil*/
+padding:10px;
+background-color:#7A5450;   
+border:3px solid black;
+text-align: left; 
+	}
+	.menu h3{
+	text-align: center; 
+
+	}
+		a{
+		color: #033154; /* couleur du lien*/
+		}
+			a:hover {
+			color: FF1900;
+			text-decoration: underline; /* Ajoute un effet au survol */
+			}
+
+				.chien_os{     /* chien du menu */
+				position: relative;
+				top: 0px;     /* hauteur de l'iamge  */
+				left: 5px; 
+				}
+		
+		
+		
+		
+		
+	.centre {
+ margin-top: 20px;
+ margin-left: 30px;
+ float: left;
+ width: 1280px;             /* largeur */
+ height: 435px; 			 /* hauteur */
+ padding: 10px;  
+ background-color: #877B7B;
+ border: 3px solid black;
+ text-align: left;      
+              
+}	
+	.chien_pA{      /*chien page d'accueil*/
+				position: relative;
+				top: -125px;     /* hauteur de l'iamge  */
+				right: 15px; 
+				}
+				
+	.centre_adoption {
+ margin-top: 20px;
+ margin-left: 30px;
+ float: left;
+ width: 1280px;             /* largeur */
+ height: 435px; 			 /* hauteur */
+ padding: 10px;  
+ background-color: #D1C5A1;
+ border: 3px solid black;
+ text-align: left; 			
+	}
+	
+	.main_chien{      /*chien page d'accueil*/
+				position: relative;
+				top: -400px;     /* hauteur de l'iamge  */
+				right: -750px; 
+				}
+				
+.centre_contact {
+ margin-top: 20px;
+ margin-left: 30px;
+ float: left;
+ width: 1280px;             /* largeur */
+ height: 435px; 			 /* hauteur */
+ padding: 10px;  
+ background-image: url("images/fond_lettre.jpg");
+ background-size: cover;            /* l’image s’adapte à l’écran */
+ background-position: center;       /* centrée */
+ background-repeat: no-repeat; 
+ border: 3px solid black;
+ text-align: left;      				
+}
+				
+
+
+		.fotter {
+margin-top:15px;
+margin-left:30px;
+float:left;
+width:1455px;
+height:30px;
+padding:10px ;
+background-color:#BAF1FF;
+border:3px solid black;
+text-align: center; 
+	}
+	.gamel{     /* gamel foter */
+				position: relative;
+				top: -60px;     /* hauteur de l'iamge  */
+				left: 650px; 
+				}
+	
