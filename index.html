@@ -1,37 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matthéo KESSIE - Accueil</title>
 
-
     <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    >
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-
-    <!-- Ton CSS -->
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -58,24 +39,35 @@
         </p>
         <div class="hero-buttons">
             <a href="bts-sio.html" class="btn btn-primary">Commencer la visite <i class="fas fa-arrow-right"></i></a>
-            <button id="open-cv-btn" class="btn btn-outline"><i class="fas fa-file-pdf"></i> Mon CV</button>
+            <a href="#cv-modal" class="btn btn-outline"><i class="fas fa-file-pdf"></i> Mon CV</a>
         </div>
     </section>
 
-    <!-- MODALE POP-UP CV -->
-    <div id="cv-modal" class="modal">
-        <div class="modal-content" style="height: 85vh; max-width: 850px; display: flex; flex-direction: column;">
-            <span class="close-modal" id="close-cv-modal">&times;</span>
-            <h2 style="margin-bottom: 15px; color: var(--primary-accent);"><i class="fas fa-file-pdf"></i> Curriculum Vitae - Matthéo KESSIE</h2>
-            
-            <a href="cv-matt-paris.pdf" target="_blank" class="btn">
-    <i class="fas fa-file-pdf"></i> Voir mon CV
+   <!-- FENÊTRE CV (CSS uniquement) -->
+<div id="cv-modal" class="cv-modal">
+    <!-- Clic sur le fond sombre = fermer -->
+    <a href="#accueil" class="cv-modal-backdrop" aria-label="Fermer"></a>
+
+    <div class="cv-modal-box">
+        <a href="#accueil" class="cv-modal-close" aria-label="Fermer">&times;</a>
+        <h2><i class="fas fa-file-pdf"></i> Curriculum Vitae - Matthéo KESSIE</h2>
+
+        <object data="CV-mattheo-paris.pdf" type="application/pdf" class="cv-modal-pdf">
+            <div class="cv-modal-fallback">
+                <p>Ton navigateur ne peut pas afficher le PDF ici.</p>
+            </div>
+        </object>
+
+        <div class="cv-modal-actions">
+            <a href="CV-mattheo-paris.pdf" target="_blank" rel="noopener" class="btn btn-primary">
+                <i class="fas fa-up-right-from-square"></i> Ouvrir dans un nouvel onglet
             </a>
-            
-         
+            <a href="CV-mattheo-paris.pdf" download class="btn btn-outline">
+                <i class="fas fa-download"></i> Télécharger
+            </a>
         </div>
     </div>
+</div>
 
-    <script src="script.js"></script>
 </body>
 </html>
